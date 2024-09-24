@@ -16,7 +16,7 @@ public class Cardapio {
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine();  // Limpa o buffer
+            scanner.nextLine();  
 
             switch (opcao) {
                 case 1: // Cadastrar Produto
