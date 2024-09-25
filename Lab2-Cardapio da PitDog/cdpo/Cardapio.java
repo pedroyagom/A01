@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Cardapiov2 {
     private static final String[][] cardapio = new String[100][3]; // 100 produtos, 3 campos
     private static final boolean[] ativos = new boolean[100]; // Status ativo
-    private static final String[][] clientes = new String[100][12]; // 100 clientes, 12 campos
+    private static final String[][] clientes = new String[100][12]; // 100 clientes, 12 campo
     private static int produtoCount = 0;
     private static int clienteCount = 0;
     private static Scanner scanner = new Scanner(System.in);
