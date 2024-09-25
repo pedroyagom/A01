@@ -347,7 +347,7 @@ public class Cardapiov2 {
             if (clientes[i][0].equalsIgnoreCase(nomeAlterar)) {
                 encontradoAlterar = true;
     
-                // Altera os campos do cliente
+                // Altera os campos do client
                 System.out.print("Novo nome (6 a 60 caracteres): ");
                 String novoNome = scanner.nextLine();
                 if (novoNome.length() < 6 || novoNome.length() > 60) {
