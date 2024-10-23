@@ -40,6 +40,13 @@ public class SistemaPessoa extends JFrame {
             }
         });
 
+        // Ação para abrir a janela de cadastro de pessoas
+        menuPessoas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                abrirJanelaCadastroPessoas();
+            }
+        });
+
         // Menu Visualização
         JMenu menuVisualizacao = new JMenu("Visualização");
         JMenuItem menuListaUsuarios = new JMenuItem("Lista de usuário");
@@ -114,6 +121,74 @@ public class SistemaPessoa extends JFrame {
         painelCadastro.add(new JLabel("Ativo:"));
         JRadioButton radioAtivo = new JRadioButton();
         painelCadastro.add(radioAtivo);
+
+        // Painel para os botões
+        JPanel painelBotoes = new JPanel();
+        painelBotoes.setLayout(new FlowLayout());
+
+        // Botões
+        String[] botoes = {"Incluir", "Alterar", "Excluir", "Consultar", "Cancelar", "Sair"};
+        for (String nomeBotao : botoes) {
+            JButton botao = new JButton(nomeBotao);
+            botao.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    if (nomeBotao.equals("Sair")) {
+                        cadastroFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Botão clicado: " + nomeBotao);
+                    }
+                }
+            });
+            painelBotoes.add(botao);
+        }
+
+        // Adicionar painel de cadastro e botões à janela
+        cadastroFrame.add(painelCadastro, BorderLayout.CENTER);
+        cadastroFrame.add(painelBotoes, BorderLayout.SOUTH);
+
+        // Exibir a janela de cadastro
+        cadastroFrame.setVisible(true);
+    }
+
+    // Método para abrir a janela de cadastro de pessoas
+    private void abrirJanelaCadastroPessoas() {
+        JFrame cadastroFrame = new JFrame("Cadastro de Pessoas");
+        cadastroFrame.setSize(600, 400);
+        cadastroFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        cadastroFrame.setLocationRelativeTo(null);
+
+        // Painel principal
+        JPanel painelCadastro = new JPanel();
+        painelCadastro.setLayout(new GridLayout(7, 2, 10, 10));
+
+        // Componentes de entrada de dados
+        painelCadastro.add(new JLabel("Nome:"));
+        JTextField campoNome = new JTextField();
+        painelCadastro.add(campoNome);
+
+        painelCadastro.add(new JLabel("Endereço:"));
+        JTextField campoEndereco = new JTextField();
+        painelCadastro.add(campoEndereco);
+
+        painelCadastro.add(new JLabel("Cidade:"));
+        JTextField campoCidade = new JTextField();
+        painelCadastro.add(campoCidade);
+
+        painelCadastro.add(new JLabel("UF:"));
+        JTextField campoUF = new JTextField();
+        painelCadastro.add(campoUF);
+
+        painelCadastro.add(new JLabel("Email:"));
+        JTextField campoEmail = new JTextField();
+        painelCadastro.add(campoEmail);
+
+        painelCadastro.add(new JLabel("Telefone:"));
+        JTextField campoTelefone = new JTextField();
+        painelCadastro.add(campoTelefone);
+
+        painelCadastro.add(new JLabel("Sexo:"));
+        JComboBox<String> campoSexo = new JComboBox<>(new String[] {"M", "F"});
+        painelCadastro.add(campoSexo);
 
         // Painel para os botões
         JPanel painelBotoes = new JPanel();
